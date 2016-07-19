@@ -1,0 +1,18 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    geokit (1.10.0)
+    minitest (5.9.0)
+    minitest-rg (5.2.0)
+      minitest (~> 5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  geokit
+  minitest
+  minitest-rg
+
+BUNDLED WITH
+   1.10.6
