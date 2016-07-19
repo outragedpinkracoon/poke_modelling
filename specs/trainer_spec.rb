@@ -13,7 +13,11 @@ class TestTrainer < MiniTest::Test
   end
 
   def test_starts_with_no_pokemon
-    assert_equal(@trainer.pokemon, [])
+    assert_equal(@trainer.owned_pokemon, [])
+  end
+
+  def test_pokemon_is_read_only
+    assert_equal(@trainer.owned_pokemon, [])
   end
 
 end
