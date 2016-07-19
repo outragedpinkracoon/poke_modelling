@@ -1,5 +1,6 @@
 class Trainer
   attr_reader :name
+  
   def initialize(name)
     @name = name
     @pokemon = []
@@ -8,4 +9,5 @@ class Trainer
   def owned_pokemon
     return @pokemon.clone
   end
+
 end
