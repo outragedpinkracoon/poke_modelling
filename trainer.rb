@@ -14,4 +14,8 @@ class Trainer
     @pokemon << pokemon
   end
 
+  def pokemon_caught
+    return @pokemon.size
+  end
+
 end

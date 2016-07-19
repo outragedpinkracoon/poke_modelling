@@ -27,4 +27,8 @@ class TestTrainer < MiniTest::Test
     assert_equal(@trainer.owned_pokemon[0], @pikachu)
   end
 
+  def test_number_of_pokemon_caught
+    assert_equal(@trainer.pokemon_caught, 0)
+  end
+
 end
