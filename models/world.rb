@@ -1,7 +1,7 @@
 class World
   attr_reader :trainer
 
-  def initialize(trainer, pokemon)
+  def initialize(trainer, pokemon, dice)
     @trainer = trainer
     @pokemon = pokemon
   end
@@ -11,6 +11,7 @@ class World
   end
 
   def search_long_grass
+    
     return @pokemon.sample
   end
   
