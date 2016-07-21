@@ -1,8 +1,9 @@
 require('minitest/autorun') 
 require('minitest/rg') 
-require_relative('../world')
-require_relative('../trainer')
-require_relative('../pokemon')
+
+require_relative('../models/world')
+require_relative('../models/trainer')
+require_relative('../models/pokemon')
 
 class WorldTest < Minitest::Test
 
@@ -20,6 +21,11 @@ class WorldTest < Minitest::Test
 
   def test_world_has_pokemon
     assert_equal(@world.pokemon, @pokemon)
+  end
+
+  def test_search_long_grass
+    found_pokemon = @world.search_long_grass
+    assert_equal(found_pokemon.class, Pokemon)
   end
 
 end

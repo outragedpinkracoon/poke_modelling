@@ -9,5 +9,9 @@ class World
   def pokemon
     return @pokemon.clone
   end
+
+  def search_long_grass
+    return @pokemon.sample
+  end
   
 end

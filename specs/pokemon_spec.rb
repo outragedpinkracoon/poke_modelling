@@ -1,4 +1,4 @@
-require_relative('../pokemon.rb')
+require_relative('../models/pokemon.rb')
 require('minitest/autorun')
 require('minitest/rg')
 
