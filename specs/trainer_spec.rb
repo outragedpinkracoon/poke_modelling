@@ -49,13 +49,18 @@ class TestTrainer < MiniTest::Test
   def test_attempt_capture_success
     dice = Dice.new
     dice.stubs(:success?).with(anything).returns(true)
-    @trainer.attempt_capture(@pikachu, dice)
+    result = @trainer.attempt_capture(@pikachu, dice)
+    assert_equal(result, true)
+    assert_equal(@trainer.owned_pokemon.size, 1)
   end
 
   def test_attempt_capture_failure
     dice = Dice.new
     dice.stubs(:success?).with(anything).returns(false)
-    @trainer.attempt_capture(@pikachu, dice)
+    result = @trainer.attempt_capture(@pikachu, dice)
+    assert_equal(result, false)
+    assert_equal(@trainer.owned_pokemon.size, 0)
+
   end
 
 

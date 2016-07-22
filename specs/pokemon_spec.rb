@@ -50,7 +50,7 @@ class TestPokemon < MiniTest::Test
   def test_capture_chance
     @pokemon.add_status(:burned)
     @pokemon.add_status(:frozen)
-    assert_equal(@pokemon.capture_chance, 20)
+    assert_equal(@pokemon.capture_chance, 30)
   end
 
 end
