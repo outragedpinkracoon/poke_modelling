@@ -11,10 +11,10 @@ class PokemonFilter
   end
 
   def remove_far_away_pokemon(trainer, pokemons)
-    first_digits = first_two_digits(trainer)
+    first_digits = first_two_digits(trainer.location)
 
     result = pokemons.select do |pokemon|
-      diff = first_digits - first_two_digits(pokemon)
+      diff = first_digits - first_two_digits(pokemon.location)
       diff = diff * -1 if diff < 1
       diff < 2
     end
@@ -22,7 +22,7 @@ class PokemonFilter
     return result
   end
 
-  def first_two_digits(object_with_latlng)
-    return object_with_latlng.location.lat.to_s[0..1].to_i
+  def first_two_digits(latlng)
+    return latlng.lat.to_s[0..1].to_i
   end
 end

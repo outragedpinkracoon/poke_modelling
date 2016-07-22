@@ -28,4 +28,9 @@ class PokemonFilterTest < Minitest::Test
     assert_equal(2, pokemon.size)
   end
 
+  def test_first_two_digits
+    first_two = @filter.first_two_digits(@latlng)
+    assert_equal(55, first_two)
+  end
+
 end
