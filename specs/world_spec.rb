@@ -8,16 +8,21 @@ require_relative('../models/world')
 require_relative('../models/dice')
 require_relative('../models/pokemon')
 require_relative('../models/trainer')
+require_relative '../config/geokit_config'
 
 class WorldTest < Minitest::Test
 
   def setup
     @latlng = Geokit::LatLng.new(55.943037, -3.103274)
+
     @trainer = Trainer.new("Val", @latlng)
+
     @pikachu = Pokemon.new("Pikachu", 25, @latlng)
     @charmander = Pokemon.new("Charmander", 4, @latlng)
     @pokemon = [@pikachu, @charmander]
+
     @dice = Dice.new
+    
     @world = World.new(@trainer, @pokemon, @dice)
   end
 
