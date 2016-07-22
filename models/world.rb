@@ -20,5 +20,5 @@ class World
     result = success ? pokemon.sample : nil
     return result
   end
-
+  
 end
