@@ -48,8 +48,15 @@ class TestTrainer < MiniTest::Test
 
   def test_attempt_capture_success
     dice = Dice.new
-    dice.stubs(:success?).with(anything()).returns(false)
+    dice.stubs(:success?).with(anything).returns(true)
     @trainer.attempt_capture(@pikachu, dice)
   end
+
+  def test_attempt_capture_failure
+    dice = Dice.new
+    dice.stubs(:success?).with(anything).returns(false)
+    @trainer.attempt_capture(@pikachu, dice)
+  end
+
 
 end
