@@ -28,6 +28,6 @@ class Pokemon
   end
 
   def capture_chance
-    return @status_effects.size.to_f / 10.0
+    return @status_effects.size.to_f * 10.0
   end
 end
