@@ -18,6 +18,12 @@ class TestPokemon < MiniTest::Test
     assert_equal(@pokemon.location, @latlng)
   end
 
+  def test_can_update_location
+    new_latlng = Geokit::LatLng.new(55.143037, -3.103274)
+    @pokemon.location = new_latlng
+    assert_equal(@pokemon.location, new_latlng)
+  end
+
   def test_has_pokedex_number
     assert_equal(@pokemon.pokedex_number, 25)
   end

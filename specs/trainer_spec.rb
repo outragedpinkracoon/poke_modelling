@@ -20,6 +20,12 @@ class TestTrainer < MiniTest::Test
     assert_equal(@trainer.location, @latlng)
   end
 
+  def test_can_update_location
+    new_latlng = Geokit::LatLng.new(55.143037, -3.103274)
+    @trainer.location = new_latlng
+    assert_equal(@pokemon.location, new_latlng)
+  end
+
   def test_starts_with_no_pokemon
     assert_equal(@trainer.owned_pokemon, [])
   end

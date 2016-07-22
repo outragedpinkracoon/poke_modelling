@@ -1,6 +1,7 @@
 class Trainer
 
-  attr_reader :name, :location
+  attr_reader :name
+  attr_accessor :location
 
   def initialize(name, location)
     @name = name
