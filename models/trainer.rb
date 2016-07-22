@@ -30,6 +30,8 @@ class Trainer
     return false if pokeballs == 0
     capture_chance = pokemon.capture_chance
     success = dice.success?(capture_chance)
+    catch_pokemon(pokemon) if success
+    return success
   end
 
 
