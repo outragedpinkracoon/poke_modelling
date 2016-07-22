@@ -17,10 +17,6 @@ class WorldTest < Minitest::Test
     @world = World.new(@pokemon, @dice)
   end
 
-  def test_world_has_trainer
-    assert_equal(@world.trainer, @trainer)
-  end
-
   def test_world_has_pokemon
     assert_equal(@world.pokemon, @pokemon)
   end
