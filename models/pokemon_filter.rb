@@ -1,9 +1,9 @@
 class PokemonFilter
 
   def nearby_pokemon(trainer, pokemon)
-    pokemons = remove_far_away_pokemon(trainer, pokemon)
+    close_pokemon = remove_far_away_pokemon(trainer, pokemon)
 
-    result = pokemons.select do |pokemon|
+    result = close_pokemon.select do |pokemon|
       pokemon.is_nearby?(trainer)
     end
     
