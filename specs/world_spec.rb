@@ -7,6 +7,7 @@ require "geokit"
 require_relative('../models/world')
 require_relative('../models/dice')
 require_relative('../models/pokemon')
+require_relative('../models/pokemon_filter')
 require_relative('../models/trainer')
 require_relative '../config/geokit_config'
 
@@ -23,7 +24,7 @@ class WorldTest < Minitest::Test
 
     @dice = Dice.new
     
-    @world = World.new(@trainer, @pokemon, @dice)
+    @world = World.new(@trainer, @pokemon, @dice, PokemonFilter.new)
   end
 
   def test_world_has_trainer
@@ -48,11 +49,6 @@ class WorldTest < Minitest::Test
     @dice.stubs(:success?).with(50).returns(false)
     found_pokemon = @world.search_long_grass
     assert_equal(found_pokemon, nil)
-  end
-
-  def test_pokemon_nearby
-    pokemon = @world.nearby_pokemon
-    assert_equal(2, pokemon.size)
   end
 
 end

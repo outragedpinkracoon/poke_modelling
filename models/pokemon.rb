@@ -6,9 +6,10 @@ class Pokemon
     @name = name
     @pokedex_number = pokedex_number
     @location = location
+    @nearby_range = 0.001
   end
 
   def is_nearby?(trainer)
-    return @location.distance_to(trainer.location) < 0.001
+    return @location.distance_to(trainer.location) < @nearby_range
   end
 end

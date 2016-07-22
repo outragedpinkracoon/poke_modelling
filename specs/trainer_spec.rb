@@ -1,5 +1,6 @@
 require_relative('../models/trainer.rb')
 require_relative('../models/pokemon.rb')
+
 require('minitest/autorun')
 require('minitest/rg')
 require('geokit')
@@ -9,7 +10,7 @@ class TestTrainer < MiniTest::Test
   def setup
     @latlng = Geokit::LatLng.new(55.943037, -3.103274)
     @trainer = Trainer.new("Valerie", @latlng)
-    @pikachu = Pokemon.new("Pikachu",25, @latlng)
+    @pikachu = Pokemon.new("Pikachu", 25, @latlng)
   end
 
   def test_has_name
@@ -23,7 +24,7 @@ class TestTrainer < MiniTest::Test
   def test_can_update_location
     new_latlng = Geokit::LatLng.new(55.143037, -3.103274)
     @trainer.location = new_latlng
-    assert_equal(@pokemon.location, new_latlng)
+    assert_equal(@trainer.location, new_latlng)
   end
 
   def test_starts_with_no_pokemon

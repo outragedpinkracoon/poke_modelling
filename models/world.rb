@@ -1,10 +1,11 @@
 class World
   attr_reader :trainer, :dice
 
-  def initialize(trainer, pokemon, dice)
+  def initialize(trainer, pokemon, dice, pokemon_filter)
     @all_pokemon = pokemon
     @trainer = trainer
     @dice = dice
+    @filter = pokemon_filter
   end
 
   def pokemon
@@ -12,18 +13,11 @@ class World
   end
 
   def search_long_grass
-    pokemon = nearby_pokemon()
+    pokemon = @filter.nearby_pokemon(@trainer, @all_pokemon)
     return nil unless pokemon.any?
 
     success = dice.success?(50)
     result = success ? pokemon.sample : nil
-    return result
-  end
-
-  def nearby_pokemon
-    result = @all_pokemon.select do |pokemon|
-      pokemon.is_nearby?(@trainer)
-    end
     return result
   end
 
