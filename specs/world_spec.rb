@@ -6,15 +6,21 @@ require "mocha/mini_test"
 require_relative('../models/world')
 require_relative('../models/dice')
 require_relative('../models/pokemon')
+require_relative('../models/trainer')
 
 class WorldTest < Minitest::Test
 
   def setup
+    @trainer = Trainer.new("Val")
     @pikachu = Pokemon.new("Pikachu", 25)
     @charmander = Pokemon.new("Charmander", 4)
     @pokemon = [@pikachu, @charmander]
     @dice = Dice.new
-    @world = World.new(@pokemon, @dice)
+    @world = World.new(@trainer, @pokemon, @dice)
+  end
+
+  def test_world_has_trainer
+    assert_equal(@world.trainer, @trainer)
   end
 
   def test_world_has_pokemon
