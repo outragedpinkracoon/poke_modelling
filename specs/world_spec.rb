@@ -35,4 +35,10 @@ class WorldTest < Minitest::Test
     assert_equal(found_pokemon.class, Pokemon)
   end
 
+  def test_search_long_grass_failure
+    @dice.stubs(:success?).with(50).returns(false)
+    found_pokemon = @world.search_long_grass
+    assert_equal(found_pokemon, nil)
+  end
+
 end
