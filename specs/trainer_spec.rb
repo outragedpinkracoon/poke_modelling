@@ -9,7 +9,7 @@ class TestTrainer < MiniTest::Test
   def setup
     @latlng = Geokit::LatLng.new(55.943037, -3.103274)
     @trainer = Trainer.new("Valerie", @latlng)
-    @pikachu = Pokemon.new("Pikachu",25)
+    @pikachu = Pokemon.new("Pikachu",25, @latlng)
   end
 
   def test_has_name
