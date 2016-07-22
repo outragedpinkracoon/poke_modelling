@@ -10,6 +10,11 @@ class Pokemon
     @status_effects = []
   end
 
+  #needs moved maybe
+  def self.valid_status_effects
+    [:burned, :paralyzed, :lowhp, :frozen, :posioned, :asleep]
+  end
+
   def is_nearby?(trainer)
     return @location.distance_to(trainer.location) < @nearby_range
   end
@@ -19,7 +24,7 @@ class Pokemon
   end
 
   def add_status(status)
-    @status_effects << status
+    @status_effects << status if Pokemon.valid_status_effects.include?(status)
   end
 
   def capture_chance
