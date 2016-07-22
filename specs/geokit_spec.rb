@@ -1,12 +1,9 @@
 require 'minitest/autorun'
 require 'minitest/rg'
 require 'geokit'
+require_relative '../config/geokit_config'
 
 class GeoKitTest < Minitest::Test
-
-  def setup
-    Geokit::default_units = :kms
-  end
 
   def test_distance_between_two_points
     first_point =  Geokit::LatLng.new(55.942008, -3.101674)
