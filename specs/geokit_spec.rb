@@ -36,4 +36,6 @@ class GeoKitTest < Minitest::Test
     assert_equal(bounds.contains?(outside), false)
   end
 
+  #take 3 off the 5th decimal
+
 end

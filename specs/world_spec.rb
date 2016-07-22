@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/rg' 
 require 'minitest/mock' 
 require "mocha/mini_test"
+require "geokit"
 
 require_relative('../models/world')
 require_relative('../models/dice')
@@ -11,9 +12,10 @@ require_relative('../models/trainer')
 class WorldTest < Minitest::Test
 
   def setup
-    @trainer = Trainer.new("Val")
-    @pikachu = Pokemon.new("Pikachu", 25)
-    @charmander = Pokemon.new("Charmander", 4)
+    @latlng = Geokit::LatLng.new(55.943037, -3.103274)
+    @trainer = Trainer.new("Val", @latlng)
+    @pikachu = Pokemon.new("Pikachu", 25, @latlng)
+    @charmander = Pokemon.new("Charmander", 4, @latlng)
     @pokemon = [@pikachu, @charmander]
     @dice = Dice.new
     @world = World.new(@trainer, @pokemon, @dice)
