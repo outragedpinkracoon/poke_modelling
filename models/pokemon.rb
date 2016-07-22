@@ -9,6 +9,6 @@ class Pokemon
   end
 
   def is_nearby?(trainer)
-    return @location.distance_to(trainer.location) < 0.01
+    return @location.distance_to(trainer.location) < 0.001
   end
 end

@@ -36,4 +36,10 @@ class TestPokemon < MiniTest::Test
     assert_equal(result, true)
   end
 
+  def test_is_not_nearby_trainer
+    @trainer.location = Geokit::LatLng.new(55.943037, -3.103244)
+    result = @pokemon.is_nearby?(@trainer)
+    assert_equal(result, false)
+  end
+
 end
