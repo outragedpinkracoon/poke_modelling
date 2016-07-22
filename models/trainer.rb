@@ -27,12 +27,11 @@ class Trainer
   end
 
   def attempt_capture(pokemon, dice)
-    return false if pokeballs == 0
+    return false if @pokeballs == 0
     capture_chance = pokemon.capture_chance
     success = dice.success?(capture_chance)
     catch_pokemon(pokemon) if success
     return success
   end
-
 
 end

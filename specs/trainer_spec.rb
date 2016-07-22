@@ -1,8 +1,10 @@
 require_relative('../models/trainer.rb')
 require_relative('../models/pokemon.rb')
+require_relative('../models/dice.rb')
 
 require('minitest/autorun')
 require('minitest/rg')
+require "mocha/mini_test"
 require('geokit')
 
 class TestTrainer < MiniTest::Test
@@ -42,6 +44,12 @@ class TestTrainer < MiniTest::Test
 
   def test_number_of_pokemon_caught
     assert_equal(@trainer.pokemon_caught, 0)
+  end
+
+  def test_attempt_capture_success
+    dice = Dice.new
+    dice.stubs(:success?).with(anything()).returns(false)
+    @trainer.attempt_capture(@pikachu, dice)
   end
 
 end

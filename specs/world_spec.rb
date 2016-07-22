@@ -1,6 +1,5 @@
 require 'minitest/autorun'
 require 'minitest/rg' 
-require 'minitest/mock' 
 require "mocha/mini_test"
 require "geokit"
 
