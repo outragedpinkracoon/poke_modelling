@@ -5,4 +5,8 @@ class Pokemon
     @name = name
     @pokedex_number = pokedex_number
   end
+
+  def is_nearby?(trainer)
+    return true
+  end
 end

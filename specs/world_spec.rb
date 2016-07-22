@@ -43,4 +43,9 @@ class WorldTest < Minitest::Test
     assert_equal(found_pokemon, nil)
   end
 
+  def test_pokemon_nearby
+    pokemon = @world.nearby_pokemon
+    assert_equal(2, pokemon.size)
+  end
+
 end
