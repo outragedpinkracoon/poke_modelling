@@ -1,7 +1,8 @@
 class Trainer
+  
   attr_reader :name
 
-  def initialize(name)
+  def initialize(name, location)
     @name = name
     @pokemon = []
   end
