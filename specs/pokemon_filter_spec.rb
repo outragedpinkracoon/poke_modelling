@@ -33,4 +33,11 @@ class PokemonFilterTest < Minitest::Test
     assert_equal(55, first_two)
   end
 
+  def test_remove_far_away_pokemon
+    @charmander.location = Geokit::LatLng.new(60.943037, -3.103274)
+    result = @filter.remove_far_away_pokemon(@trainer, @pokemon)
+    assert_equal(1, result.size)
+  end
+
+
 end

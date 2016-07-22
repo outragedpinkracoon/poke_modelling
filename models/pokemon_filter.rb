@@ -25,4 +25,5 @@ class PokemonFilter
   def first_two_digits(latlng)
     return latlng.lat.to_s[0..1].to_i
   end
+  
 end
