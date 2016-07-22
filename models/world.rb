@@ -1,9 +1,9 @@
 class World
-  attr_reader :trainer
+  attr_reader :trainer, :dice
 
-  def initialize(trainer, pokemon, dice)
-    @trainer = trainer
+  def initialize(pokemon, dice)
     @pokemon = pokemon
+    @dice = dice
   end
 
   def pokemon
@@ -11,8 +11,9 @@ class World
   end
 
   def search_long_grass
-    
-    return @pokemon.sample
+    success = dice.success?(50)
+    result = success ? @pokemon.sample : nil
+    return result
   end
-  
+
 end

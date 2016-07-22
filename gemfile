@@ -2,4 +2,5 @@ source 'http://rubygems.org'
 
 gem "minitest"
 gem "minitest-rg"
+gem "mocha"
 gem "geokit"

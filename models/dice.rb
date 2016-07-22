@@ -1,6 +1,6 @@
 class Dice
 
-  def initialize(number_of_sides)
+  def initialize(number_of_sides = 100)
     @sides = number_of_sides
   end
 
@@ -9,8 +9,8 @@ class Dice
   end
 
   def success?(threshold)
-    result = roll
-    success = roll >= threshold
+    return roll >= threshold
   end
 
 end
+
