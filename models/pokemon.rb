@@ -21,4 +21,8 @@ class Pokemon
   def add_status(status)
     @status_effects << status
   end
+
+  def capture_chance
+    return @status_effects.size.to_f / 10.0
+  end
 end

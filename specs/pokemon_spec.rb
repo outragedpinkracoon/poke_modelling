@@ -42,9 +42,15 @@ class TestPokemon < MiniTest::Test
     assert_equal(result, false)
   end
 
-  def add_status_effect
+  def test_add_status_effect
     @pokemon.add_status(:burned)
-    assert_equal(pokemon.status_effects.size,1)
+    assert_equal(@pokemon.status_effects.size,1)
+  end
+
+  def test_capture_chance
+    @pokemon.add_status(:burned)
+    @pokemon.add_status(:frozen)
+    assert_equal(@pokemon.capture_chance, 0.2)
   end
 
 end

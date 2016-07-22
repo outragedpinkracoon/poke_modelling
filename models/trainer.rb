@@ -28,6 +28,7 @@ class Trainer
 
   def attempt_capture(pokemon)
     return false if pokeballs == 0
+    capture_chance = pokemon.capture_chance
     #pokemon asleep
     #pokemon frozen
     #pokemon paralyzed
